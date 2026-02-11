@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Data Analysis Presentation</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0a192f;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+header {
+    background: #112240;
+    padding: 30px;
+    text-align: center;
+}
+
+.profile {
+    width: 120px;
+    height: 120px;
+    background: url('https://f.top4top.io/p_36946pfyd0.jpg') no-repeat center/cover;
+    margin: auto;
+    border-radius: 10px;
+    border: 3px solid #64ffda;
+}
+
+h1 {
+    margin-top: 15px;
+    color: #64ffda;
+}
+
+h2 {
+    color: #64ffda;
+}
+
+section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.card {
+    background: #112240;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #112240;
+    color: #8892b0;
+}
+
+button {
+    padding: 10px 20px;
+    background: #64ffda;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="profile"></div>
+    <h1 id="name">Gilang Handsome</h1>
+    <p id="class">Class: X DPIB 3</p>
+    <p id="title">AI Data Analysis</p>
+    <button onclick="toggleLanguage()" id="translateBtn">Translate to Indonesian</button>
+</header>
+
+<section>
+
+<div class="card">
+<h2 id="orientationTitle">Orientation</h2>
+<p id="orientationText">
+Artificial Intelligence (AI) is a rapidly developing technology that enables machines to simulate human intelligence.
+Today, AI is widely used in various sectors such as education, healthcare, finance, and industry.
+</p>
+</div>
+
+<div class="card">
+<h2 id="explanationTitle">Explanation</h2>
+<p id="explanationText">
+Based on recent global data, AI adoption has increased significantly in the last five years.
+Many companies use AI for automation, data prediction, and decision-making systems.
+</p>
+</div>
+
+<div class="card">
+<h2 id="argument1Title">Argument 1</h2>
+<p id="argument1Text">
+AI improves efficiency and productivity. AI systems can process large amounts of data faster and more accurately than humans.
+</p>
+</div>
+
+<div class="card">
+<h2 id="argument2Title">Argument 2</h2>
+<p id="argument2Text">
+AI supports innovation and problem-solving. In healthcare and education, AI helps provide better solutions and personalized services.
+</p>
+</div>
+
+<div class="card">
+<h2 id="closureTitle">Closure</h2>
+<p id="closureText">
+In conclusion, Artificial Intelligence plays an important role in modern society.
+With proper development and ethical regulation, AI can bring great benefits in the future.
+</p>
+</div>
+
+</section>
+
+<footer id="footer">
+Created by Gilang Handsome | 2026
+</footer>
+
+<script>
+let isEnglish = true;
+
+function toggleLanguage() {
+
+if (isEnglish) {
+
+document.getElementById("translateBtn").innerText = "Translate to English";
+
+document.getElementById("orientationTitle").innerText = "Orientasi";
+document.getElementById("orientationText").innerText =
+"Kecerdasan Buatan (AI) adalah teknologi yang berkembang pesat yang memungkinkan mesin meniru kecerdasan manusia. Saat ini AI digunakan dalam pendidikan, kesehatan, keuangan, dan industri.";
+
+document.getElementById("explanationTitle").innerText = "Penjelasan";
+document.getElementById("explanationText").innerText =
+"Berdasarkan data global terbaru, penggunaan AI meningkat signifikan dalam lima tahun terakhir. Banyak perusahaan menggunakan AI untuk otomatisasi dan analisis data.";
+
+document.getElementById("argument1Title").innerText = "Argumen 1";
+document.getElementById("argument1Text").innerText =
+"AI meningkatkan efisiensi dan produktivitas. Sistem AI dapat memproses data lebih cepat dan lebih akurat dibanding manusia.";
+
+document.getElementById("argument2Title").innerText = "Argumen 2";
+document.getElementById("argument2Text").innerText =
+"AI mendukung inovasi dan pemecahan masalah. Dalam bidang kesehatan dan pendidikan, AI membantu memberikan solusi yang lebih baik.";
+
+document.getElementById("closureTitle").innerText = "Penutup";
+document.getElementById("closureText").innerText =
+"Kesimpulannya, AI memiliki peran penting dalam masyarakat modern. Dengan pengembangan yang tepat, AI dapat memberikan manfaat besar di masa depan.";
+
+} else {
+
+location.reload(); // kembali ke English default
+
+}
+
+isEnglish = !isEnglish;
+}
+</script>
+
+</body>
+</html>
