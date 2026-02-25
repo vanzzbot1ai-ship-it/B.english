@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brendan Eich | Complete Biography</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#000;
+    color:#00ff88;
+    font-family:monospace;
+    overflow-x:hidden;
+}
+
+canvas{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:0;
+}
+
+.container{
+    position:relative;
+    z-index:2;
+    padding:80px 10%;
+}
+
+.card{
+    position:relative;
+    background:#0a0a0a;
+    padding:60px 40px;
+    border:3px solid #00ff88;
+    box-shadow:
+        0 0 30px #00ff88,
+        8px 8px 0px #003322;
+    clip-path:polygon(
+        0 0,
+        95% 0,
+        100% 8%,
+        100% 100%,
+        5% 100%,
+        0 92%
+    );
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:-12px;
+    left:-12px;
+    right:-12px;
+    bottom:-12px;
+    border:2px solid #00ffff;
+    opacity:0.3;
+    z-index:-1;
+    clip-path:inherit;
+}
+
+.profile{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:40px;
+    margin-bottom:40px;
+}
+
+.profile img{
+    width:200px;
+    border:3px solid #00ff88;
+    box-shadow:0 0 25px #00ff88;
+}
+
+.profile-info{
+    flex:1;
+}
+
+h1{
+    font-size:clamp(26px,5vw,44px);
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#00ffaa;
+    margin-bottom:15px;
+}
+
+.section{
+    margin-top:30px;
+    padding:25px;
+    border:2px solid #00ff88;
+    background:#050505;
+    box-shadow:
+        0 0 15px rgba(0,255,136,0.4),
+        5px 5px 0px #002a1a;
+    transition:0.3s;
+}
+
+.section:hover{
+    transform:translateY(-5px);
+    box-shadow:
+        0 0 25px #00ff88,
+        8px 8px 0px #002a1a;
+}
+
+h2{
+    margin-bottom:10px;
+    color:#00ffaa;
+}
+
+p{
+    line-height:1.7;
+    color:#caffdf;
+}
+
+@media(max-width:768px){
+    .profile{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+</style>
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div class="container">
+<div class="card">
+
+<div class="profile">
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Brendan_Eich_Mozilla_Foundation_official_photo.jpg">
+
+<div class="profile-info">
+<h1>Brendan Eich</h1>
+<div class="subtitle">Creator of JavaScript • Co-Founder of Mozilla • CEO of Brave</div>
+<p>An American technologist best known for creating JavaScript and shaping the modern web ecosystem.</p>
+</div>
+</div>
+
+<div class="section">
+<h2>1961 — Early Life</h2>
+<p>Brendan Eich was born on July 4, 1961, in Pittsburgh, Pennsylvania, United States. 
+He developed an early interest in mathematics, programming logic, and computer systems.</p>
+</div>
+
+<div class="section">
+<h2>Education</h2>
+<p>He earned a Bachelor's degree in Mathematics and Computer Science from Santa Clara University.
+Later, he completed his Master’s degree in Computer Science at the University of Illinois at Urbana-Champaign.</p>
+</div>
+
+<div class="section">
+<h2>Early Career</h2>
+<p>Before Netscape, Eich worked at Silicon Graphics and other technology companies, focusing on systems programming and compiler technologies.</p>
+</div>
+
+<div class="section">
+<h2>1995 — Creation of JavaScript</h2>
+<p>While working at Netscape Communications, Eich was tasked with developing a scripting language for the browser.
+In approximately 10 days, he created JavaScript.</p>
+
+<p>Originally named Mocha, then LiveScript, it was later renamed JavaScript. 
+The language enabled dynamic web pages and transformed the internet permanently.</p>
+</div>
+
+<div class="section">
+<h2>1998 — Mozilla Foundation</h2>
+<p>Eich co-founded Mozilla and played a central role in the open-source movement.
+He contributed significantly to the development of Firefox and the standardization of ECMAScript.</p>
+</div>
+
+<div class="section">
+<h2>2014 — Mozilla CEO</h2>
+<p>In 2014, he briefly served as CEO of Mozilla. However, due to controversy surrounding past political donations,
+he resigned shortly after his appointment.</p>
+</div>
+
+<div class="section">
+<h2>2015 — Founding Brave Software</h2>
+<p>In 2015, Eich founded Brave Software.
+Brave introduced a privacy-focused browser that blocks trackers by default
+and launched Basic Attention Token (BAT) as a blockchain-based advertising model.</p>
+</div>
+
+<div class="section">
+<h2>Present — Ongoing Influence</h2>
+<p>As of today, Brendan Eich continues to serve as CEO of Brave.
+JavaScript remains one of the most widely used programming languages globally,
+powering frontend frameworks, backend systems (Node.js), mobile apps, and Web3 technologies.</p>
+</div>
+
+</div>
+</div>
+
+<script>
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+function resize(){
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+}
+resize();
+window.addEventListener("resize", resize);
+
+const letters = "01";
+const fontSize = 14;
+let columns = canvas.width/fontSize;
+let drops = Array(Math.floor(columns)).fill(1);
+
+function draw(){
+ctx.fillStyle="rgba(0,0,0,0.05)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle="#00ff88";
+ctx.font=fontSize+"px monospace";
+
+for(let i=0;i<drops.length;i++){
+const text=letters.charAt(Math.floor(Math.random()*letters.length));
+ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+
+if(drops[i]*fontSize>canvas.height && Math.random()>0.975)
+drops[i]=0;
+
+drops[i]++;
+}
+}
+
+setInterval(draw,33);
+</script>
+
+</body>
+</html>
